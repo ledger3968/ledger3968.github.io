@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心-糖心网页版在线入口_糖心官网首页与内容浏览</title>
+<meta name="description" content="糖心主题首页，汇集糖心网页版入口、糖心官网内容分区与浏览路径，说明糖心平台的基本定位、内容浏览方式与常见使用问题，帮助你快速找到糖心相关页面与入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff7aa8'/%3E%3Cstop offset='1' stop-color='%23ffb36b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56C14 44 6 34 6 24a14 14 0 0 1 26-7 14 14 0 0 1 26 7c0 10-8 20-26 32z' fill='url(%23g)'/%3E%3C/svg%3E">
+<style>
+:root{
+  --pink:#ff5c8a;
+  --pink-deep:#e63f6f;
+  --peach:#ffb36b;
+  --ink:#231b22;
+  --ink-soft:#5d525b;
+  --paper:#fff8f6;
+  --card:#ffffff;
+  --line:#f2e3e4;
+  --shadow:0 10px 30px rgba(230,63,111,.09);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:.08em;color:var(--pink-deep);
+  background:#ffeef3;border:1px solid #ffd9e3;border-radius:999px;
+  padding:5px 14px;font-weight:600;
+}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,248,246,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.02em}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand-text{color:var(--ink)}
+.brand-text em{font-style:normal;color:var(--pink-deep)}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:15px;color:var(--ink-soft)}
+.nav-links a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--pink-deep);border-bottom-color:var(--pink)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(120deg,var(--pink),var(--peach));
+  color:#fff;font-weight:600;font-size:14px;
+  padding:9px 20px;border-radius:999px;
+  box-shadow:0 8px 18px rgba(255,92,138,.28);
+  transition:.2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(255,92,138,.34)}
+@media(max-width:860px){
+  .nav-links{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 72px;
+  background:
+    radial-gradient(900px 420px at 88% -10%,#ffe1ea 0%,transparent 62%),
+    radial-gradient(700px 380px at 2% 110%,#ffeede 0%,transparent 60%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr .92fr;
+  gap:52px;align-items:center;
+}
+h1{
+  font-size:clamp(40px,6vw,66px);
+  line-height:1.12;font-weight:900;letter-spacing:.01em;
+  margin:20px 0 18px;
+  background:linear-gradient(115deg,var(--pink-deep),var(--pink) 45%,var(--peach));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{
+  font-size:17px;color:var(--ink-soft);max-width:34em;margin-bottom:28px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(120deg,var(--pink),var(--peach));
+  color:#fff;font-weight:700;font-size:16px;
+  padding:14px 28px;border-radius:999px;
+  box-shadow:0 12px 26px rgba(255,92,138,.32);
+  transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1.5px solid #ffd2de;color:var(--pink-deep);
+  font-weight:600;font-size:15px;padding:12px 24px;border-radius:999px;
+  transition:.2s;
+}
+.btn-ghost:hover{background:#fff3f6;border-color:var(--pink)}
+.btn-ghost[aria-disabled="true"]{opacity:.62;cursor:not-allowed}
+.hero-note{margin-top:18px;font-size:13px;color:#9a8d94}
+
+.hero-art{
+  position:relative;border-radius:28px;overflow:hidden;
+  background:linear-gradient(150deg,#fff2f5,#fff7ef);
+  border:1px solid #ffe3ea;box-shadow:var(--shadow);
+  padding:26px;
+}
+.hero-art .chip{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:var(--ink-soft);margin-bottom:16px;
+}
+.hero-art .chip b{color:var(--pink-deep);font-size:14px}
+.art-list{display:grid;gap:12px}
+.art-item{
+  display:flex;gap:12px;align-items:center;
+  background:#fff;border:1px solid #ffe6ec;border-radius:14px;
+  padding:11px 14px;
+}
+.art-item .dot{
+  width:34px;height:34px;border-radius:10px;flex:none;
+  background:linear-gradient(135deg,#ffd0dd,#ffe7d3);
+  display:grid;place-items:center;
+}
+.art-item span.t{font-size:14px;font-weight:600}
+.art-item span.s{font-size:12px;color:#a294 9c;color:#a2949c}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero{padding:44px 0 52px}
+}
+
+/* ---------- section base ---------- */
+section.block{padding:66px 0}
+.sec-head{max-width:44em;margin-bottom:34px}
+.sec-head h2{
+  font-size:clamp(24px,3.4vw,32px);font-weight:800;letter-spacing:.01em;
+  margin:14px 0 12px;line-height:1.3;
+}
+.sec-head p{color:var(--ink-soft);font-size:16px}
+
+/* ---------- feature cards ---------- */
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 24px;
+  box-shadow:var(--shadow);transition:.22s;
+}
+.card:hover{transform:translateY(-3px);border-color:#ffd3df}
+.card .ico{
+  width:46px;height:46px;border-radius:13px;
+  display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(135deg,#ffe0e9,#fff0e2);
+}
+.card h3{font-size:17.5px;font-weight:700;margin-bottom:9px}
+.card p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- split content ---------- */
+.split{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;
+}
+.prose h2{font-size:clamp(23px,3vw,29px);font-weight:800;margin:0 0 16px;line-height:1.32}
+.prose p{font-size:15.5px;color:var(--ink-soft);margin-bottom:14px}
+.prose p strong{color:var(--ink)}
+.ticks{list-style:none;display:grid;gap:12px;margin-top:22px}
+.ticks li{
+  display:flex;gap:11px;align-items:flex-start;
+  font-size:15px;color:var(--ink-soft);
+}
+.ticks li svg{flex:none;margin-top:4px}
+.aside-box{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow);
+}
+.aside-box h3{font-size:16.5px;font-weight:700;margin-bottom:14px}
+.aside-box .row{
+  display:flex;justify-content:space-between;gap:12px;
+  padding:11px 0;border-bottom:1px dashed #f6e2e6;font-size:14.5px;
+}
+.aside-box .row:last-child{border-bottom:0}
+.aside-box .row span:first-child{color:var(--ink-soft)}
+.aside-box .row span:last-child{font-weight:600}
+@media(max-width:900px){.split{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- steps ---------- */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  counter-reset:step;
+}
+.step{
+  position:relative;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:30px 24px 26px;box-shadow:var(--shadow);
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:14px;font-weight:800;letter-spacing:.1em;
+  color:var(--pink);display:block;margin-bottom:12px;
+}
+.step h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- search / filter ---------- */
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:14px 16px;box-shadow:var(--shadow);margin-bottom:26px;
+}
+.filter-bar label{font-size:14px;color:var(--ink-soft);font-weight:600}
+.filter-bar input{
+  flex:1 1 200px;min-width:0;font:inherit;font-size:15px;
+  padding:10px 14px;border:1.5px solid #f3dfe4;border-radius:10px;
+  background:var(--paper);color:var(--ink);outline:none;
+}
+.filter-bar input:focus{border-color:var(--pink);background:#fff}
+.filter-bar .count{font-size:13px;color:#a2949c;white-space:nowrap}
+.grid-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.entry{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:22px 22px;box-shadow:var(--shadow);transition:.2s;
+}
+.entry:hover{border-color:#ffd3df;transform:translateY(-2px)}
+.entry .tag{
+  display:inline-block;font-size:12px;font-weight:700;color:var(--pink-deep);
+  background:#ffeef3;border-radius:999px;padding:3px 11px;margin-bottom:10px;
+}
+.entry h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+.entry p{font-size:14.5px;color:var(--ink-soft)}
+.empty{
+  display:none;text-align:center;color:#a2949c;font-size:15px;
+  padding:26px 0;
+}
+@media(max-width:760px){.grid-list{grid-template-columns:1fr}}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:14px;max-width:900px}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:18px 22px;box-shadow:var(--shadow);
+}
+details[open]{border-color:#ffd3df}
+summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";color:var(--pink-deep);font-size:20px;font-weight:700;line-height:1;
+}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- footer ---------- */
+footer.site{
+  margin-top:20px;border-top:1px solid var(--line);
+  background:#fff;padding:44px 0 30px;
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;
+  padding-bottom:30px;border-bottom:1px solid var(--line);
+}
+.foot-brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:18px;margin-bottom:12px}
+.foot-brand .mark{width:32px;height:32px}
+.foot-grid p{font-size:14px;color:var(--ink-soft);max-width:30em}
+.foot-col h4{font-size:14.5px;font-weight:700;margin-bottom:12px}
+.foot-col a{display:block;font-size:14px;color:var(--ink-soft);padding:4px 0}
+.foot-col a:hover{color:var(--pink-deep)}
+.copy{
+  padding-top:22px;display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:space-between;font-size:13px;color:#a2949c;
+}
+@media(max-width:760px){
+  .cards,.steps{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:26px}
+  section.block{padding:48px 0}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="糖心 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff5c8a"/><stop offset="1" stop-color="#ffb36b"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 57C14 45 6 35 6 25a14 14 0 0 1 26-7 14 14 0 0 1 26 7c0 10-8 20-26 32z" fill="url(#bg1)"/>
+        <circle cx="32" cy="27" r="7" fill="#fff" opacity=".92"/>
+      </svg>
+      <span class="brand-text">糖心</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#about">平台概览</a>
+      <a href="#features">内容特色</a>
+      <a href="#browse">内容分区</a>
+      <a href="#howto">使用流程</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#browse">进入内容区</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">糖心 · 主题首页</span>
+        <h1>糖心</h1>
+        <p class="lead">糖心是一个以甜美视觉与轻量内容为主的浏览主题。本页汇总糖心的入口说明、内容分区和常见使用问题，让你在打开页面的第一分钟就知道从哪里开始，以及糖心各板块分别提供什么。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#browse">
+            浏览糖心内容
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn-ghost" href="#about">了解糖心定位</a>
+        </div>
+        <p class="hero-note">页面内容为静态说明，具体入口以实际可用地址为准。</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="chip"><b>糖心 · 内容速览</b><span>3 个分区</span></div>
+        <div class="art-list">
+          <div class="art-item">
+            <span class="dot">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg>
+            </span>
+            <span><span class="t">首页精选</span><br><span class="s">按主题聚合的浏览入口</span></span>
+          </div>
+          <div class="art-item">
+            <span class="dot">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            </span>
+            <span><span class="t">关键词查找</span><br><span class="s">按栏目名称快速定位</span></span>
+          </div>
+          <div class="art-item">
+            <span class="dot">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg>
+            </span>
+            <span><span class="t">更新与偏好</span><br><span class="s">查看近期内容变化</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block" id="about">
+    <div class="wrap split">
+      <div class="prose">
+        <span class="eyebrow">平台概览</span>
+        <h2>糖心首页想解决什么问题</h2>
+        <p>第一次接触<strong>糖心</strong>的访客，通常先关心三件事：糖心是什么、糖心页面上能看到什么、从哪里进入具体内容。本页把这三件事放在同一屏内回答，避免在多个页面之间来回跳转。</p>
+        <p>糖心以柔和的粉色与暖橙作为主色调，强调轻松、甜美的浏览氛围。页面结构上以内容分区为核心，说明性文字围绕分区展开，让访问者在阅读介绍的同时就能看到可以点击的入口。</p>
+        <p>需要说明的是，本页是糖心的主题首页，承担介绍与导航职责；具体内容的丰富程度、更新频率和可用入口，以实际服务状态为准，页面不做超出资料的承诺。</p>
+        <ul class="ticks">
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ff5c8a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+            统一入口：糖心的导航与按钮都指向本页真实存在的分区。
+          </li>
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ff5c8a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+            信息分层：先读概览，再看分区，最后按需查阅常见问题。
+          </li>
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ff5c8a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+            移动优先：小屏下优先展示主题文字与核心入口。
+          </li>
+        </ul>
+      </div>
+      <aside class="aside-box" aria-label="糖心页面要素">
+        <h3>糖心页面要素一览</h3>
+        <div class="row"><span>主题定位</span><span>内容浏览首页</span></div>
+        <div class="row"><span>视觉基调</span><span>粉色 · 暖橙</span></div>
+        <div class="row"><span>主要分区</span><span>精选 / 查找 / 更新</span></div>
+        <div class="row"><span>核心操作</span><span>进入内容区</span></div>
+        <div class="row"><span>页面形态</span><span>单文件静态页</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="block" id="features" style="background:linear-gradient(180deg,#fff8f6,#fff3f6);">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">内容特色</span>
+        <h2>糖心的三个内容方向</h2>
+        <p>糖心把浏览需求拆成精选、查找与更新三条线，每条线对应不同的使用场景，读者可按自己的目的直接跳转。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/><path d="M9 13h6"/></svg>
+          </span>
+          <h3>精选聚合</h3>
+          <p>糖心首页把同类内容归入同一板块，减少翻找成本。适合没有明确目标、希望先浏览再决定的访客。</p>
+        </article>
+        <article class="card">
+          <span class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </span>
+          <h3>名称查找</h3>
+          <p>糖心内容区提供关键词输入框，可输入栏目名称即时筛选条目，结果在页面内直接呈现，无需跳转。</p>
+        </article>
+        <article class="card">
+          <span class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e63f6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"/><path d="M6 11l6-6 6 6"/></svg>
+          </span>
+          <h3>更新提示</h3>
+          <p>板块内标注内容方向与状态，方便回访者判断哪些部分值得再次查看。状态描述以页面实际标注为准。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE -->
+  <section class="block" id="browse">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">内容分区</span>
+        <h2>按栏目浏览糖心</h2>
+        <p>下面列出糖心的主要栏目。输入关键词即可筛选，清空输入框恢复全部条目。所有条目均为页面内静态内容。</p>
+      </div>
+
+      <div class="filter-bar">
+        <label for="q">筛选栏目</label>
+        <input id="q" type="search" placeholder="输入栏目名称，例如：精选" autocomplete="off" aria-describedby="qcount">
+        <span class="count" id="qcount" aria-live="polite">共 6 个栏目</span>
+      </div>
+
+      <div class="grid-list" id="entryList">
+        <article class="entry" data-name="首页精选 糖心">
+          <span class="tag">精选</span>
+          <h3>首页精选</h3>
+          <p>糖心首页的聚合板块，按主题归类展示内容入口，适合初次访问时先建立整体印象。</p>
+        </article>
+        <article class="entry" data-name="专题合辑 糖心">
+          <span class="tag">合辑</span>
+          <h3>专题合辑</h3>
+          <p>把同类内容归入一个专题，方便集中浏览。专题数量与分类方式以实际页面为准。</p>
+        </article>
+        <article class="entry" data-name="名称查找 糖心">
+          <span class="tag">查找</span>
+          <h3>名称查找</h3>
+          <p>输入栏目或内容名称进行筛选，结果在页面内即时显示，适合目标明确的访客。</p>
+        </article>
+        <article class="entry" data-name="更新动态 糖心">
+          <span class="tag">更新</span>
+          <h3>更新动态</h3>
+          <p>记录内容板块的调整方向与近期变化，帮助回访者快速判断是否需要再次浏览。</p>
+        </article>
+        <article class="entry" data-name="使用说明 糖心">
+          <span class="tag">说明</span>
+          <h3>使用说明</h3>
+          <p>介绍糖心的页面结构与操作路径，包括导航、筛选与常见问题的查看方式。</p>
+        </article>
+        <article class="entry" data-name="客户端下载 糖心">
+          <span class="tag">下载</span>
+          <h3>客户端下载</h3>
+          <p>糖心客户端下载入口。当前版本信息与安装包地址尚未提供，按钮暂不可用，正式发布后在此更新。</p>
+        </article>
+      </div>
+      <p class="empty" id="emptyTip">没有匹配的栏目，试试其他关键词。</p>
+    </div>
+  </section>
+
+  <!-- HOWTO -->
+  <section class="block" id="howto" style="background:linear-gradient(180deg,#fff3f6,#fff8f6);">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">使用流程</span>
+        <h2>三步进入糖心内容</h2>
+        <p>不论从桌面还是手机访问，糖心的浏览路径都保持三步，顺序一致、位置固定。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确认主题</h3>
+          <p>在首屏阅读糖心的定位说明与内容速览，判断页面是否符合你的浏览目的。</p>
+        </div>
+        <div class="step">
+          <h3>选择栏目</h3>
+          <p>使用顶部导航跳转到内容分区，或通过筛选框输入名称，直接定位到对应栏目。</p>
+        </div>
+        <div class="step">
+          <h3>查看与回访</h3>
+          <p>阅读栏目说明后进入具体内容；回访时先看更新动态，再决定浏览哪些板块。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">常见问题</span>
+        <h2>关于糖心的常见疑问</h2>
+        <p>以下回答整理自页面本身的说明，涉及具体服务状态的内容以实际情况为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>糖心是什么类型的页面？</summary>
+          <p>糖心是一个内容浏览主题的首页，主要承担介绍与导航职责：说明页面定位、列出内容分区，并提供进入具体栏目的入口。</p>
+        </details>
+        <details>
+          <summary>糖心的内容如何查找？</summary>
+          <p>可以在「内容分区」使用筛选框输入栏目名称，页面会即时显示匹配条目；也可以使用顶部导航直接跳转到对应板块。</p>
+        </details>
+        <details>
+          <summary>糖心客户端现在可以下载吗？</summary>
+          <p>暂不可用。页面中的下载入口处于禁用状态，版本信息与安装包地址尚未提供，正式发布后会在此更新。</p>
+        </details>
+        <details>
+          <summary>页面内容会持续更新吗？</summary>
+          <p>栏目的调整方向会记录在「更新动态」板块中。具体更新节奏取决于实际内容维护情况，页面不作额外承诺。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff5c8a"/><stop offset="1" stop-color="#ffb36b"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 57C14 45 6 35 6 25a14 14 0 0 1 26-7 14 14 0 0 1 26 7c0 10-8 20-26 32z" fill="url(#bg2)"/>
+            <circle cx="32" cy="27" r="7" fill="#fff" opacity=".92"/>
+          </svg>
+          糖心
+        </div>
+        <p>糖心主题首页，汇总入口说明、内容分区与常见问题，帮助你在一页之内完成浏览前的准备。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#about">平台概览</a>
+        <a href="#features">内容特色</a>
+        <a href="#browse">内容分区</a>
+        <a href="#howto">使用流程</a>
+      </div>
+      <div class="foot-col">
+        <h4>其他</h4>
+        <a href="#faq">常见问题</a>
+        <a href="#browse">客户端下载</a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2024 糖心 · 主题首页</span>
+      <span>页面信息以实际内容状态为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var list = document.getElementById('entryList');
+  var items = Array.prototype.slice.call(list.querySelectorAll('.entry'));
+  var count = document.getElementById('qcount');
+  var empty = document.getElementById('emptyTip');
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(el){
+      var name = (el.getAttribute('data-name') || '') + ' ' + el.textContent;
+      var hit = !kw || name.toLowerCase().indexOf(kw) !== -1;
+      el.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    count.textContent = '共 ' + shown + ' 个栏目';
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  q.addEventListener('input', apply);
+  apply();
+})();
+</script>
+
+</body>
+</html>

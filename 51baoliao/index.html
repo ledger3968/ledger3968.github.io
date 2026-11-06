@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51爆料每日大赛大乱斗-每日爆料大赛大乱斗_吃瓜黑料热门合集</title>
+<meta name="description" content="51爆料每日大赛大乱斗聚合每日爆料大赛大乱斗最新热点，汇集吃瓜黑料与热门爆料合集，按日期与热度呈现，方便快速浏览当天大乱斗内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1033'/%3E%3Cpath d='M32 12l4.8 12.6L50 27l-10 8.6L43 50 32 42.4 21 50l3-14.4L14 27l13.2-2.4z' fill='%23ffcf4d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#120a22;
+  --bg2:#1b1033;
+  --card:#221640;
+  --card2:#2a1b4d;
+  --line:rgba(255,207,77,.18);
+  --gold:#ffcf4d;
+  --pink:#ff5c9d;
+  --purple:#8d6bff;
+  --text:#f2ecff;
+  --muted:#b9aede;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:
+    radial-gradient(900px 500px at 80% -10%,rgba(141,107,255,.28),transparent 60%),
+    radial-gradient(700px 420px at 0% 10%,rgba(255,92,157,.18),transparent 60%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,10,34,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.5px;color:var(--text);}
+.logo:hover{text-decoration:none;}
+.logo-mark{width:34px;height:34px;flex:0 0 34px;}
+.logo-text{white-space:nowrap;}
+.nav{display:flex;gap:22px;flex-wrap:wrap;}
+.nav a{color:var(--muted);font-size:14.5px;font-weight:600;padding:4px 0;border-bottom:2px solid transparent;}
+.nav a:hover{color:var(--gold);text-decoration:none;border-bottom-color:var(--gold);}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold);border-radius:10px;padding:6px 12px;font-size:14px;}
+
+/* hero */
+.hero{padding:56px 0 34px;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center;}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,92,157,.14);border:1px solid rgba(255,92,157,.4);
+  color:#ffb3d0;font-size:12.5px;font-weight:700;letter-spacing:1px;
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink);}
+h1{
+  font-size:clamp(28px,4.4vw,46px);
+  line-height:1.25;margin:0 0 16px;font-weight:900;letter-spacing:.5px;
+  background:linear-gradient(100deg,#fff 10%,var(--gold) 55%,var(--pink) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{margin:0 0 24px;color:var(--muted);font-size:16px;max-width:56ch;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;border-radius:12px;font-weight:800;font-size:15px;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(120deg,var(--gold),#ff9f43);color:#241300;box-shadow:0 8px 26px rgba(255,207,77,.28);}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none;}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);text-decoration:none;}
+
+.hero-art{position:relative;display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:320px;height:auto;filter:drop-shadow(0 18px 40px rgba(141,107,255,.35));}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+.stat b{display:block;font-size:24px;color:var(--gold);font-weight:900;line-height:1.2;}
+.stat span{font-size:13px;color:var(--muted);}
+
+/* section */
+section{padding:44px 0;}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap;}
+.section-head h2{font-size:clamp(21px,2.6vw,27px);margin:0;font-weight:900;letter-spacing:.5px;}
+.section-head h2::before{content:"";display:inline-block;width:6px;height:20px;margin-right:10px;border-radius:3px;background:linear-gradient(var(--gold),var(--pink));vertical-align:-3px;}
+.section-head p{margin:0;color:var(--muted);font-size:14px;}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:linear-gradient(180deg,var(--card2),var(--card));
+  border:1px solid var(--line);border-radius:16px;padding:20px;
+  display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,207,77,.45);}
+.card .tag{font-size:12px;font-weight:800;color:var(--pink);letter-spacing:1px;}
+.card h3{margin:0;font-size:17px;font-weight:800;line-height:1.5;}
+.card p{margin:0;color:var(--muted);font-size:14px;}
+.card .meta{margin-top:auto;display:flex;justify-content:space-between;font-size:12.5px;color:#8f83b8;padding-top:8px;border-top:1px dashed rgba(255,255,255,.08);}
+
+/* list / ranking */
+.rank-list{display:flex;flex-direction:column;gap:10px;}
+.rank-item{
+  display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 18px;transition:.2s;
+}
+.rank-item:hover{border-color:rgba(255,207,77,.4);}
+.rank-no{font-weight:900;font-size:19px;color:var(--gold);text-align:center;}
+.rank-item:nth-child(-n+3) .rank-no{color:var(--pink);}
+.rank-title{font-weight:700;font-size:15px;}
+.rank-sub{font-size:13px;color:var(--muted);}
+.rank-hot{font-size:12.5px;color:#9e92c6;white-space:nowrap;}
+
+/* filter */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+.chip{
+  cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--muted);font-size:13.5px;font-weight:700;padding:7px 16px;border-radius:999px;transition:.2s;
+}
+.chip:hover{color:var(--gold);border-color:var(--gold);}
+.chip.active{background:linear-gradient(120deg,var(--gold),#ff9f43);color:#241300;border-color:transparent;}
+.feed{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.feed-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;}
+.feed-item h4{margin:0;font-size:15.5px;font-weight:800;}
+.feed-item p{margin:0;font-size:13.5px;color:var(--muted);}
+.feed-item .stamp{font-size:12px;color:#8f83b8;letter-spacing:.5px;}
+.feed-item[hidden]{display:none;}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;}
+.about-text p{color:var(--muted);font-size:15px;margin:0 0 14px;}
+.about-text strong{color:var(--text);}
+.tips{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:22px;}
+.tips h3{margin:0 0 12px;font-size:16px;color:var(--gold);}
+.tips ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:8px;}
+
+/* download box */
+.dl-box{
+  margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  background:linear-gradient(120deg,rgba(255,207,77,.12),rgba(255,92,157,.1));
+  border:1px solid var(--line);border-radius:16px;padding:22px 26px;
+}
+.dl-box h3{margin:0 0 6px;font-size:17px;font-weight:900;}
+.dl-box p{margin:0;font-size:13.5px;color:var(--muted);}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:12px;
+  background:linear-gradient(120deg,var(--gold),#ff9f43);color:#241300;font-weight:900;font-size:15px;
+  pointer-events:none;opacity:.9;
+}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:34px 0 40px;margin-top:20px;background:rgba(0,0,0,.18);}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;margin-bottom:10px;}
+.foot-brand svg{width:28px;height:28px;}
+footer p{color:var(--muted);font-size:13.5px;margin:0 0 8px;max-width:40ch;}
+footer h4{margin:0 0 10px;font-size:14px;color:var(--gold);}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+footer ul a{color:var(--muted);font-size:13.5px;}
+footer ul a:hover{color:var(--gold);}
+.copy{margin-top:26px;padding-top:16px;border-top:1px dashed rgba(255,255,255,.08);font-size:12.5px;color:#8075a8;text-align:center;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-art{order:-1;max-width:240px;margin:0 auto;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .nav{display:none;}
+  .nav.open{display:flex;width:100%;padding-top:10px;}
+  .nav-toggle{display:block;}
+  .header-inner{flex-wrap:wrap;}
+  .hero{padding:34px 0 20px;}
+  .cards{grid-template-columns:1fr;}
+  .feed{grid-template-columns:1fr;}
+  .stats{grid-template-columns:1fr;}
+  .rank-item{grid-template-columns:36px 1fr;row-gap:6px;}
+  .rank-hot{grid-column:2;text-align:left;}
+  .foot-grid{grid-template-columns:1fr;}
+  .dl-box{flex-direction:column;align-items:flex-start;}
+  body{font-size:15px;}
+  .logo-text{font-size:13.5px;white-space:normal;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="51爆料每日大赛大乱斗首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#2a1b4d"/>
+        <path d="M32 12l4.8 12.6L50 27l-10 8.6L43 50 32 42.4 21 50l3-14.4L14 27l13.2-2.4z" fill="#ffcf4d"/>
+        <circle cx="32" cy="30" r="4" fill="#ff5c9d"/>
+      </svg>
+      <span class="logo-text">51爆料每日大赛大乱斗</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">菜单</button>
+    <nav class="nav" id="mainnav" aria-label="主导航">
+      <a href="#today">今日爆料</a>
+      <a href="#rank">大乱斗榜</a>
+      <a href="#archive">爆料归档</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><span class="dot"></span>每日更新 · 爆料大乱斗</span>
+        <h1>51爆料每日大赛大乱斗</h1>
+        <p class="lead">这里是「51爆料每日大赛大乱斗」的首页入口：每天把散落各处的爆料集中到一处，按日期与热度排列成大乱斗节奏，吃瓜、黑料、热门话题一条条摆开，方便你一次看完当天主要动静。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#today">看今日爆料</a>
+          <a class="btn btn-ghost" href="#rank">进大乱斗榜</a>
+        </div>
+        <div class="stats" style="margin-top:26px;">
+          <div class="stat"><b>每日</b><span>更新节奏</span></div>
+          <div class="stat"><b>多栏</b><span>爆料分区</span></div>
+          <div class="stat"><b>热度</b><span>排序参考</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 320" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffcf4d"/>
+              <stop offset="1" stop-color="#ff5c9d"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8d6bff"/>
+              <stop offset="1" stop-color="#2a1b4d"/>
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="160" r="128" fill="url(#g2)" opacity=".55"/>
+          <circle cx="160" cy="160" r="96" fill="none" stroke="url(#g1)" stroke-width="2" stroke-dasharray="6 8"/>
+          <path d="M160 62l18 47 50 9-37 32 10 50-41-26-41 26 10-50-37-32 50-9z" fill="url(#g1)"/>
+          <rect x="86" y="238" width="148" height="12" rx="6" fill="#ffcf4d" opacity=".8"/>
+          <rect x="106" y="258" width="108" height="10" rx="5" fill="#ff5c9d" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>今日爆料大乱斗</h2>
+        <p>当天主要爆料条目，按话题归类摆放</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">吃瓜区</span>
+          <h3>新一轮热门话题集中冒头</h3>
+          <p>当天讨论度较高的几条爆料被放在一起，方便对照前后经过，看清哪些是新的、哪些是旧事被重新翻出。</p>
+          <div class="meta"><span>每日更新</span><span>热度标签</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">黑料区</span>
+          <h3>旧料回锅与新料并存</h3>
+          <p>归档里早先出现过的爆料会被重新标注，与当天新增内容并排展示，避免把旧内容当成新进展。</p>
+          <div class="meta"><span>归档对照</span><span>标注来源</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">大乱斗</span>
+          <h3>多条爆料同场比拼热度</h3>
+          <p>同一时段的多条爆料进入同一面板，读者可直观看到哪一条更受关注，再决定先看哪条。</p>
+          <div class="meta"><span>同场排列</span><span>热度参考</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANK -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>大乱斗热度榜</h2>
+        <p>按讨论量与浏览关注度排列的爆料条目</p>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item">
+          <div class="rank-no">01</div>
+          <div>
+            <div class="rank-title">当日头号爆料话题</div>
+            <div class="rank-sub">讨论集中，转发与二次提及较多</div>
+          </div>
+          <div class="rank-hot">热度较高</div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-no">02</div>
+          <div>
+            <div class="rank-title">人物相关爆料条目</div>
+            <div class="rank-sub">以公开讨论为主，细节仍有待核实</div>
+          </div>
+          <div class="rank-hot">持续讨论</div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-no">03</div>
+          <div>
+            <div class="rank-title">旧料重提条目</div>
+            <div class="rank-sub">归档内容再次被提及，附原时间标注</div>
+          </div>
+          <div class="rank-hot">回温中</div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-no">04</div>
+          <div>
+            <div class="rank-title">多话题交叉条目</div>
+            <div class="rank-sub">涉及多个讨论方向，需分开看待</div>
+          </div>
+          <div class="rank-hot">一般</div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-no">05</div>
+          <div>
+            <div class="rank-title">冷门但有意思的爆料</div>
+            <div class="rank-sub">关注度不高，内容相对完整</div>
+          </div>
+          <div class="rank-hot">长尾热度</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section id="archive">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>爆料归档</h2>
+        <p>按话题类型筛选，快速找到想看的条目</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="归档筛选">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="eat">吃瓜</button>
+        <button class="chip" data-filter="dark">黑料</button>
+        <button class="chip" data-filter="hot">热门</button>
+      </div>
+      <div class="feed" id="feed">
+        <article class="feed-item" data-cat="eat hot">
+          <span class="stamp">今日 · 吃瓜</span>
+          <h4>话题人物最新动态被集中讨论</h4>
+          <p>多条讨论指向同一方向，内容以公开信息为主，细节部分仍在补充。</p>
+        </article>
+        <article class="feed-item" data-cat="dark">
+          <span class="stamp">今日 · 黑料</span>
+          <h4>旧日争议材料再次出现</h4>
+          <p>该条内容此前已归档，本次重新出现时保留了原有时间与来源标注。</p>
+        </article>
+        <article class="feed-item" data-cat="hot">
+          <span class="stamp">今日 · 热门</span>
+          <h4>多条爆料同场比拼关注度</h4>
+          <p>热度榜依据讨论量与浏览关注度排列，仅作浏览顺序参考。</p>
+        </article>
+        <article class="feed-item" data-cat="eat">
+          <span class="stamp">今日 · 吃瓜</span>
+          <h4>讨论中出现不同说法</h4>
+          <p>同一事件存在多种版本，页面并列呈现，不替读者下结论。</p>
+        </article>
+        <article class="feed-item" data-cat="dark hot">
+          <span class="stamp">今日 · 黑料</span>
+          <h4>材料真实性有待确认</h4>
+          <p>涉及具体细节的部分尚未得到可靠来源支持，页面仅作记录。</p>
+        </article>
+        <article class="feed-item" data-cat="eat hot">
+          <span class="stamp">今日 · 吃瓜</span>
+          <h4>长尾话题慢慢升温</h4>
+          <p>关注度不高，但内容相对完整，适合想慢慢翻看的读者。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>关于本站</h2>
+        <p>了解 51爆料每日大赛大乱斗 的定位与阅读方式</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>51爆料每日大赛大乱斗</strong>是一个以每日爆料聚合为主题的页面，把吃瓜、黑料与热门讨论按日期收拢，形成类似“大乱斗”的并列排列。这里不做判断，只把当天出现的主要条目摆出来，让读者自己看、自己分辨。</p>
+          <p>页面结构分三块：今日爆料负责当天新增内容，大乱斗热度榜负责排序参考，爆料归档负责按类型回看旧条目。三块内容各有分工，避免同一事实反复出现却没有新信息。</p>
+          <p>关于内容的确定性：涉及具体人物、时间与细节的爆料，页面只保留公开讨论中出现的说法，并标注其来源与时间范围。未获可靠来源支持的细节，以“有待核实”的方式呈现。读者在浏览 51爆料每日大赛大乱斗 时，可把热度排序当作浏览顺序建议，而不是事实结论。</p>
+          <p>如果你只是想快速了解当天讨论方向，从今日爆料进入即可；如果想按话题类型翻找，用归档筛选更方便。51爆料每日大赛大乱斗会持续按日更新这一结构，保持条目与分区的对应关系清楚。</p>
+        </div>
+        <aside class="tips">
+          <h3>阅读提示</h3>
+          <ul>
+            <li>热度榜反映讨论量，不代表性内容为真。</li>
+            <li>旧料重提会保留原始时间标注，注意区分新旧。</li>
+            <li>同一事件存在多种说法时，页面并列呈现。</li>
+            <li>具体细节以可靠来源为准，未证实的部分会注明。</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="dl-box">
+        <div>
+          <h3>下载爆料目录</h3>
+          <p>把当日条目整理成目录文件，方便离线翻看与对照归档。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#2a1b4d"/>
+            <path d="M32 12l4.8 12.6L50 27l-10 8.6L43 50 32 42.4 21 50l3-14.4L14 27l13.2-2.4z" fill="#ffcf4d"/>
+            <circle cx="32" cy="30" r="4" fill="#ff5c9d"/>
+          </svg>
+          <span>51爆料每日大赛大乱斗</span>
+        </div>
+        <p>每日爆料聚合页面，吃瓜、黑料与热门讨论并列呈现，按日期与热度组织浏览顺序。</p>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#today">今日爆料</a></li>
+          <li><a href="#rank">大乱斗榜</a></li>
+          <li><a href="#archive">爆料归档</a></li>
+          <li><a href="#about">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>浏览建议</h4>
+        <ul>
+          <li><a href="#today">先看当天新增</a></li>
+          <li><a href="#rank">再看热度排序</a></li>
+          <li><a href="#archive">按类型回看旧料</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 51爆料每日大赛大乱斗 · 内容为公开讨论聚合，具体细节以可靠来源为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.nav-toggle');
+  var nav=document.getElementById('mainnav');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=640){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+  var chips=document.querySelectorAll('.chip');
+  var items=document.querySelectorAll('#feed .feed-item');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active');});
+      chip.classList.add('active');
+      var f=chip.getAttribute('data-filter');
+      items.forEach(function(item){
+        var cats=(item.getAttribute('data-cat')||'').split(/\s+/);
+        item.hidden = !(f==='all'||cats.indexOf(f)>-1);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
